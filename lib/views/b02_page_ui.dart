@@ -52,12 +52,13 @@ class _B02PageUiState extends State<B02PageUi> {
                   TextField(
                     decoration: InputDecoration(
                       hintText: 'Email',
-                      fillColor: const Color(0xFFF1F4FF),
+                      fillColor: const Color.fromARGB(255, 254, 254, 254),
                       filled: true,
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10.0),
                         borderSide: const BorderSide(
-                            color: Color(0xFF1E48B0), width: 2),
+                            color: const Color.fromARGB(255, 253, 253, 254),
+                            width: 2),
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10.0),
@@ -73,7 +74,7 @@ class _B02PageUiState extends State<B02PageUi> {
                     obscureText: true,
                     decoration: InputDecoration(
                       hintText: 'Password',
-                      fillColor: const Color(0xFFF1F4FF),
+                      fillColor: const Color.fromARGB(255, 253, 253, 254),
                       filled: true,
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10.0),

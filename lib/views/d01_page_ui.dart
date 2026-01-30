@@ -143,7 +143,7 @@ class _D01PageUiState extends State<D01PageUi> {
                         child: Text(
                           'Continue as a guest',
                           style: GoogleFonts.poppins(
-                            color: const Color(0xFF00C2CB),
+                            color: const Color.fromARGB(255, 0, 6, 6),
                             fontSize: 14,
                             fontWeight: FontWeight.w500,
                             decoration: TextDecoration.underline,

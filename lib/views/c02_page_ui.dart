@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'c03_page_ui.dart';
-// ✅ 1. Import หน้า C01 สำหรับการย้อนกลับ (หรือใช้ Navigator.pop)
 import 'c01_page_ui.dart';
 
 class C02PageUi extends StatefulWidget {
@@ -14,13 +13,16 @@ class C02PageUi extends StatefulWidget {
 class _C02PageUiState extends State<C02PageUi> {
   @override
   Widget build(BuildContext context) {
+    // กำหนดสีพื้นหลังที่ต้องการใช้ทั่วทั้งหน้าจอ
+    Color bgColor = Colors.purple[50]!;
+
     return Scaffold(
-      backgroundColor: Colors.purple[50],
-      // ✅ 2. ใช้ Stack เพื่อให้วางปุ่มย้อนกลับทับบนเนื้อหาหลักได้
+      // ✅ 1. เปลี่ยนพื้นหลังหลักเป็นสีม่วงอ่อนให้เต็มหน้าจอ
+      backgroundColor: bgColor,
       body: SafeArea(
         child: Stack(
           children: [
-            // --- โค้ดเนื้อหาเดิมของคุณทั้งหมด ---
+            // ส่วนของเนื้อหาหลัก
             SingleChildScrollView(
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 30),
@@ -28,7 +30,7 @@ class _C02PageUiState extends State<C02PageUi> {
                   children: [
                     // Status Bar จำลอง
                     Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 10),
+                      padding: const EdgeInsets.only(top: 20, bottom: 10),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -88,14 +90,15 @@ class _C02PageUiState extends State<C02PageUi> {
 
                     const SizedBox(height: 40),
 
+                    // ช่องกรอก Email
                     _buildInputLabel('Email'),
                     TextField(
                       decoration: InputDecoration(
                         hintText: 'ex: jon.smith@email.com',
                         hintStyle: GoogleFonts.kanit(color: Colors.grey[400]),
                         enabledBorder: OutlineInputBorder(
-                          borderSide: const BorderSide(
-                              color: Color(0xFF40C4FF), width: 2),
+                          borderSide:
+                              const BorderSide(color: Colors.white, width: 2),
                           borderRadius: BorderRadius.circular(8),
                         ),
                         focusedBorder: OutlineInputBorder(
@@ -108,16 +111,21 @@ class _C02PageUiState extends State<C02PageUi> {
 
                     const SizedBox(height: 20),
 
+                    // ช่องกรอก Password
                     _buildInputLabel('Password'),
                     TextField(
                       obscureText: true,
                       decoration: InputDecoration(
                         hintText: '•••••••••',
-                        filled: true,
-                        fillColor: const Color(
-                            0xFFF1F4FF), // ปรับให้สีเข้มขึ้นนิดหน่อยเพื่อให้เห็นชัด
-                        border: OutlineInputBorder(
-                          borderSide: BorderSide.none,
+                        hintStyle: GoogleFonts.kanit(color: Colors.grey[400]),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide:
+                              const BorderSide(color: Colors.white, width: 2),
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: const BorderSide(
+                              color: Color(0xFF00C853), width: 2),
                           borderRadius: BorderRadius.circular(8),
                         ),
                       ),
@@ -199,13 +207,12 @@ class _C02PageUiState extends State<C02PageUi> {
               ),
             ),
 
-            // ✅ 3. เพิ่มปุ่มย้อนกลับ (Back Button)
+            // ปุ่มย้อนกลับ (Back Button)
             Positioned(
-              top: 50, // ปรับตำแหน่งให้อยู่ใต้ Status Bar เล็กน้อย
+              top: 50,
               left: 15,
               child: IconButton(
                 onPressed: () {
-                  // ย้อนกลับไปหน้า C01
                   Navigator.pop(context);
                 },
                 icon: const Icon(
@@ -221,7 +228,6 @@ class _C02PageUiState extends State<C02PageUi> {
     );
   }
 
-  // ฟังก์ชันช่วยสร้าง Label (โค้ดเดิม)
   Widget _buildInputLabel(String label) {
     return Align(
       alignment: Alignment.centerLeft,
@@ -235,7 +241,6 @@ class _C02PageUiState extends State<C02PageUi> {
     );
   }
 
-  // ฟังก์ชันช่วยสร้าง Social Icon (โค้ดเดิม)
   Widget _socialIcon(String path) {
     return Container(
       padding: const EdgeInsets.all(12),
