@@ -6,7 +6,9 @@ import 'package:google_fonts/google_fonts.dart';
 // 1. Import หน้าที่ต้องการเชื่อมไปหา
 import 'a01_page_ui.dart';
 import 'b01_page_ui.dart';
-import 'c01_page_ui.dart'; // ✅ เพิ่มการ import หน้า C01 ตรงนี้
+import 'c01_page_ui.dart';
+import 'd01_page_ui.dart';
+import 'e01_page_ui.dart'; // ✅ เพิ่มการ import หน้า E01 ตรงนี้
 
 class HomeUi extends StatelessWidget {
   const HomeUi({super.key});
@@ -100,11 +102,10 @@ class HomeUi extends StatelessWidget {
               const SizedBox(height: 15.0),
 
               // ==========================================
-              // ปุ่มกดไปหน้า C (แก้ไขการเชื่อมโยงแล้ว)
+              // ปุ่มกดไปหน้า C
               // ==========================================
               ElevatedButton(
                 onPressed: () {
-                  // ✅ ใส่ Navigator เพื่อไปหน้า C01
                   Navigator.push(
                     context,
                     MaterialPageRoute(
@@ -131,9 +132,18 @@ class HomeUi extends StatelessWidget {
 
               const SizedBox(height: 15.0),
 
-              // ปุ่ม D (ยังไม่ได้เชื่อม)
+              // ==========================================
+              // ปุ่มกดไปหน้า D
+              // ==========================================
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const D01PageUi(),
+                    ),
+                  );
+                },
                 child: Text(
                   'Go to D Page',
                   style: GoogleFonts.kanit(
@@ -153,9 +163,19 @@ class HomeUi extends StatelessWidget {
 
               const SizedBox(height: 15.0),
 
-              // ปุ่ม E (ยังไม่ได้เชื่อม)
+              // ==========================================
+              // ปุ่ม E (เพิ่มการเชื่อมหน้าแล้ว)
+              // ==========================================
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  // ✅ ใส่ Navigator เพื่อไปหน้า E01
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const E01PageUi(),
+                    ),
+                  );
+                },
                 child: Text(
                   'Go to E Page',
                   style: GoogleFonts.kanit(

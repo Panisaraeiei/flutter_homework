@@ -18,7 +18,36 @@ class _B03PageUiState extends State<B03PageUi> {
           padding: const EdgeInsets.symmetric(horizontal: 30.0),
           child: Column(
             children: [
-              const SizedBox(height: 50.0),
+              // -----------------------------------------------------------
+              // ✅ ส่วนของปุ่มย้อนกลับที่เพิ่มเข้ามา (แก้ไข onPressed ให้ถูกต้อง)
+              // -----------------------------------------------------------
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 20.0),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: const Color(0xFF1E48B0).withOpacity(0.1),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: IconButton(
+                      icon: const Icon(
+                        Icons.arrow_back_ios_new,
+                        color: Color(0xFF1E48B0),
+                        size: 20,
+                      ),
+                      onPressed: () {
+                        // ใช้ Navigator.pop เพื่อย้อนกลับไป 1 ลำดับ (กลับไปหน้า B02)
+                        // หากต้องการข้ามไปหน้าอื่น ให้ใช้ Navigator.push
+                        Navigator.pop(context);
+                      },
+                    ),
+                  ),
+                ),
+              ),
+
+              const SizedBox(height: 30.0),
+
               // หัวข้อหลัก
               Text(
                 'Create Account',
@@ -29,6 +58,7 @@ class _B03PageUiState extends State<B03PageUi> {
                 ),
               ),
               const SizedBox(height: 10.0),
+
               // ข้อความรายละเอียด
               Text(
                 'Create an account so you can explore all the\nexisting jobs',
@@ -89,11 +119,10 @@ class _B03PageUiState extends State<B03PageUi> {
 
               const SizedBox(height: 30.0),
 
-              // ✅ ปุ่ม Already have an account (กดแล้วกลับไป B02)
+              // ปุ่ม Already have an account (กดแล้วกลับไป B02)
               GestureDetector(
                 onTap: () {
-                  Navigator.pop(
-                      context); // ใช้ pop เพื่อย้อนกลับไปหน้าก่อนหน้า (B02)
+                  Navigator.pop(context);
                 },
                 child: Text(
                   'Already have an account',
@@ -128,6 +157,7 @@ class _B03PageUiState extends State<B03PageUi> {
                   _socialButton('assets/images/apple-logo.png'),
                 ],
               ),
+              const SizedBox(height: 20.0),
             ],
           ),
         ),
@@ -135,7 +165,7 @@ class _B03PageUiState extends State<B03PageUi> {
     );
   }
 
-  // Widget ช่วยสร้าง TextField ให้ดีไซน์เหมือนในรูป
+  // Widget ช่วยสร้าง TextField
   Widget _buildTextField(String hint, {bool isPassword = false}) {
     return TextField(
       obscureText: isPassword,
@@ -143,7 +173,7 @@ class _B03PageUiState extends State<B03PageUi> {
         hintText: hint,
         hintStyle: GoogleFonts.kanit(color: Colors.grey[600]),
         filled: true,
-        fillColor: const Color(0xFFF1F4FF), // สีพื้นหลังฟ้าอ่อนตามรูป
+        fillColor: const Color(0xFFF1F4FF),
         contentPadding:
             const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
         enabledBorder: OutlineInputBorder(
