@@ -14,7 +14,7 @@ class _D06PageUiState extends State<D06PageUi> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 238, 241, 164),
+      backgroundColor: Colors.purple[100],
       body: SafeArea(
         child: Column(
           children: [
@@ -81,7 +81,7 @@ class _D06PageUiState extends State<D06PageUi> {
                       "Your new password must be unique from those previously used.",
                       style: GoogleFonts.urbanist(
                         fontSize: 16,
-                        color: const Color(0xFF8391A1),
+                        color: const Color.fromARGB(255, 0, 2, 5),
                         height: 1.5,
                       ),
                     ),

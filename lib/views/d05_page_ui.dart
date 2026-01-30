@@ -14,7 +14,7 @@ class _D05PageUiState extends State<D05PageUi> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 238, 241, 164),
+      backgroundColor: Colors.purple[100],
       body: SafeArea(
         child: Column(
           children: [
@@ -81,7 +81,7 @@ class _D05PageUiState extends State<D05PageUi> {
                       "Enter the verification code we just sent on your email address.",
                       style: GoogleFonts.urbanist(
                         fontSize: 16,
-                        color: const Color(0xFF8391A1),
+                        color: const Color.fromARGB(255, 0, 5, 10),
                         height: 1.5,
                       ),
                     ),

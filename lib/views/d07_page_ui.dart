@@ -13,7 +13,7 @@ class _D07PageUiState extends State<D07PageUi> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 238, 241, 164),
+      backgroundColor: Colors.purple[100],
       body: SafeArea(
         child: Column(
           children: [
@@ -85,7 +85,7 @@ class _D07PageUiState extends State<D07PageUi> {
                       textAlign: TextAlign.center,
                       style: GoogleFonts.urbanist(
                         fontSize: 16,
-                        color: const Color(0xFF8391A1),
+                        color: const Color.fromARGB(255, 0, 1, 2),
                         height: 1.5,
                       ),
                     ),

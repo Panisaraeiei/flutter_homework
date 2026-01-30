@@ -14,7 +14,7 @@ class _D04PageUiState extends State<D04PageUi> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 238, 241, 164),
+      backgroundColor: Colors.purple[100],
       body: SafeArea(
         child: Column(
           children: [
@@ -81,7 +81,7 @@ class _D04PageUiState extends State<D04PageUi> {
                       "Don't worry! It occurs. Please enter the email address linked with your account.",
                       style: GoogleFonts.urbanist(
                         fontSize: 16,
-                        color: const Color(0xFF6A707C),
+                        color: const Color.fromARGB(255, 1, 5, 12),
                         height: 1.5,
                       ),
                     ),

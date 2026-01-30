@@ -15,7 +15,7 @@ class _B02PageUiState extends State<B02PageUi> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 246, 179, 179),
+      backgroundColor: Colors.blue[50],
       body: SafeArea(
         // ✅ ใช้ Stack เพื่อวางปุ่มย้อนกลับลอยทับเนื้อหาหลัก
         child: Stack(

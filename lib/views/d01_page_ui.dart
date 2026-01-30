@@ -14,7 +14,7 @@ class _D01PageUiState extends State<D01PageUi> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 238, 241, 164),
+      backgroundColor: Colors.purple[100],
       body: SafeArea(
         child: Stack(
           // ✅ ใช้ Stack เพื่อวางปุ่มย้อนกลับทับบนเลเยอร์ปกติ

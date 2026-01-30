@@ -31,7 +31,7 @@ class _B01PageUiState extends State<B01PageUi> {
             // ✅ 3. ทำให้มุมเนื้อหาสีชมพูโค้งมนเหมือนหน้าจอโทรศัพท์
             borderRadius: BorderRadius.circular(30.0),
             child: Scaffold(
-              backgroundColor: Colors.pink[50], // พื้นหลังเนื้อหาเดิม
+              backgroundColor: Colors.blue[50], // พื้นหลังเนื้อหาเดิม
               // ✅ 4. Stack และเนื้อหาเดิมของคุณทั้งหมด (ห้ามลบ/ห้ามเปลี่ยน)
               body: Stack(
                 children: [
@@ -44,7 +44,7 @@ class _B01PageUiState extends State<B01PageUi> {
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 20.0),
                           child: Image.asset(
-                            'assets/images/boyy.png',
+                            'assets/images/job-seeker.png',
                             height: MediaQuery.of(context).size.height * 0.3,
                             fit: BoxFit.contain,
                           ),
@@ -183,7 +183,7 @@ class _B01PageUiState extends State<B01PageUi> {
                       },
                       icon: const Icon(
                         Icons.arrow_back_ios_new,
-                        color: Color.fromARGB(255, 222, 74, 21),
+                        color: Color.fromARGB(255, 15, 4, 0),
                         size: 25,
                       ),
                     ),

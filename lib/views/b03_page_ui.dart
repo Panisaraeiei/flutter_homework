@@ -12,7 +12,7 @@ class _B03PageUiState extends State<B03PageUi> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 164, 214, 239),
+      backgroundColor: Colors.blue[50],
       body: SafeArea(
         child: SingleChildScrollView(
           padding: const EdgeInsets.symmetric(horizontal: 30.0),
